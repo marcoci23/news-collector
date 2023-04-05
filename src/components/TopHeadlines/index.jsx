@@ -6,11 +6,13 @@ import CategoryMenu from "../CategoryMenu";
 import Pagination from "../Pagination";
 import axios from "axios";
 import ContentLoader from "react-content-loader";
-import s from "./Loader.module.css";
+import style from "./Loader.module.css";
+import s from "./TopHeadlines.module.css";
+import { FetchingContext } from "../../pages/NewsPage";
 
 const TopHeadlines = ({ lang, currentPage, setCurrentPage }) => {
   const [news, setNews] = React.useState([]);
-  const [fetching, setFetching] = React.useState(true);
+  const { fetching, setFetching } = React.useContext(FetchingContext);
 
   const category = useSelector((state) => state.categoryReducer.category);
 
@@ -46,13 +48,16 @@ const TopHeadlines = ({ lang, currentPage, setCurrentPage }) => {
   return (
     <div>
       <CategoryMenu setFetching={setFetching} setCurrentPage={setCurrentPage} />
-
+      <div className={s.title}>
+        Top headlines articles based on the Google News ranking
+      </div>
       {news.map((item, idx) =>
         fetching == false ? (
           <NewsIntem idx={idx} key={idx} news={item} />
         ) : (
           <ContentLoader
-            className={s.loader}
+            key={idx}
+            className={style.loader}
             rtl
             speed={2}
             width={1200}

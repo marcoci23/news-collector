@@ -13,12 +13,12 @@
 }
 .newsPage {
   background: rgb(0, 0, 0);
-  /* background: radial-gradient(
+  background: radial-gradient(
     circle,
     rgb(40, 48, 90) 10%,
     rgba(0, 0, 0, 1) 86%
-  ); */
-  background-color: #000000;
+  );
+  /* background-color: #000000; */
   /* background-image: url(../img/fon.png);
   background-repeat: no-repeat;
   background-size: cover; */
@@ -43,5 +43,14 @@
 }
 .logo {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+.subtitle {
+  font-style: normal;
+  font-weight: 275;
+  font-size: 15px;
+  line-height: 30px;
+  color: #b8b8b8;
 }

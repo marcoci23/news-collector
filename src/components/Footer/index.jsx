@@ -15,7 +15,7 @@ const Footer = () => {
           <span>Weather</span>
         </div>
       </div>
-      <div className={s.link}>newscollector.com</div>
+      <div className={s.link}>newscollector.vercel.app</div>
     </div>
   );
 };

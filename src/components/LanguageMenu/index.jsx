@@ -1,9 +1,10 @@
 import React from "react";
 import s from "./LanguageMenu.module.css";
-import { LanguageContext } from "../../pages/NewsPage";
+import { FetchingContext, LanguageContext } from "../../pages/NewsPage";
 
 export const LanguageMenu = () => {
   const { lang, setLang, setCurrentPage } = React.useContext(LanguageContext);
+  const { setFetching } = React.useContext(FetchingContext);
   const [open, setOpen] = React.useState(false);
   const langList = [
     { name: "en", label: "English" },
@@ -11,6 +12,7 @@ export const LanguageMenu = () => {
     { name: "ru", label: "Russian" },
   ];
   const onClickLang = (idx) => {
+    setFetching(true);
     setLang(langList[idx].name);
     setOpen(false);
     setCurrentPage(1);
