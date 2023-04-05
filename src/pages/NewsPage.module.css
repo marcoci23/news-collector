@@ -1,0 +1,47 @@
+::-webkit-scrollbar {
+  width: 0;
+}
+.title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 275;
+  font-size: 35px;
+  line-height: 52px;
+  color: white;
+  margin-top: 50px;
+  letter-spacing: 0.1em;
+}
+.newsPage {
+  background: rgb(0, 0, 0);
+  /* background: radial-gradient(
+    circle,
+    rgb(40, 48, 90) 10%,
+    rgba(0, 0, 0, 1) 86%
+  ); */
+  background-color: #000000;
+  /* background-image: url(../img/fon.png);
+  background-repeat: no-repeat;
+  background-size: cover; */
+  min-height: 100vh;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@keyframes ani {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+.logo {
+  display: flex;
+  justify-content: center;
+}

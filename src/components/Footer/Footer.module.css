@@ -1,0 +1,49 @@
+.root {
+  background: #131313;
+}
+.content {
+  padding-top: 30px;
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  height: 200px;
+}
+.git {
+  width: 400px;
+  color: white;
+}
+.logo {
+  width: 400px;
+  color: white;
+  margin: auto 0;
+  text-align: center;
+}
+.logo span {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -0.05em;
+
+  color: rgba(102, 105, 198, 0.23);
+}
+.siteMap {
+  width: 400px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.siteMap span:first-child {
+  margin-bottom: 15px;
+  color: rgb(184, 184, 184);
+}
+.link {
+  color: rgba(255, 255, 255, 0.371);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  background-color: #000000;
+}

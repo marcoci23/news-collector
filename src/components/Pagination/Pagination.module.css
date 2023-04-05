@@ -1,0 +1,32 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+.currentPage {
+  color: white;
+}
+.btn {
+  width: 103px;
+  height: 36px;
+  left: 594px;
+  top: 880px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #9a989878;
+  color: white;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 275;
+  font-size: 15px;
+}
+.btn:hover {
+  transition: 1s;
+  background-color: #cccbcb78;
+}
+.currentPage {
+  padding: 0 30px 0;
+  margin: auto 0;
+}

@@ -1,0 +1,44 @@
+.categoryMenu {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 25px;
+  outline: none;
+  border: 0;
+  border-radius: 50px;
+  height: 36px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #444;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  vertical-align: top;
+  transition: box-shadow 0.2s;
+  font-weight: 300;
+}
+.btn:focus-visible {
+  border: 1px solid #000000;
+  outline: none;
+}
+.btn:hover {
+  transition: all 0.2s;
+  color: white;
+  background-color: #ecf1ff65;
+  box-shadow: 0 7px 14px rgb(65 132 144 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
+}
+.btn:active {
+  background-color: #ecf1ff;
+}
+.active {
+  transition-duration: 1s;
+  background-color: #0d1920;
+  color: #ffffff;
+}

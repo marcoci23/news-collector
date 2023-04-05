@@ -1,0 +1,10 @@
+.languageMenu {
+  cursor: pointer;
+}
+
+.languages {
+  position: absolute;
+  width: 100px;
+  background-color: #80b3ff;
+  text-align: center;
+}
