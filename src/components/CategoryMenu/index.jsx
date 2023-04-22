@@ -1,7 +1,8 @@
 import React from "react";
 import s from "./CategoryMenu.module.css";
-import { useDispatch } from "react-redux";
-import { setCategory } from "../../redux/categoriesSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { setCategory } from "../../redux/slices/categoriesSlice";
+import { setCurrentPage } from "../../redux/slices/newsSlice";
 
 const categoryName = [
   "general",
@@ -15,16 +16,17 @@ const categoryName = [
   "health",
 ];
 
-const CategoryMenu = ({ setCurrentPage, setFetching }) => {
-  const [activeCategory, setActiveCategory] = React.useState(0);
-
+const CategoryMenu = () => {
   const dispatch = useDispatch();
+  const activeCategory = useSelector(
+    (state) => state.categoryReducer.activeCategory
+  );
 
   const onClickCategory = (idx) => {
     dispatch(setCategory(categoryName[idx]));
-    setActiveCategory(idx);
-    setCurrentPage(1);
-    setFetching(true);
+    dispatch(setCurrentPage(1));
+    // activeCategory != categoryName[idx] && setStatus("loading");
+    // console.log(activeCategory, categoryName[idx]);
   };
 
   return (
@@ -32,7 +34,9 @@ const CategoryMenu = ({ setCurrentPage, setFetching }) => {
       {categoryName.map((el, idx) => (
         <button
           key={idx}
-          className={`${s.btn} ${activeCategory == idx ? s.active : ""}`}
+          className={`${s.btn} ${
+            activeCategory == categoryName[idx] ? s.active : ""
+          }`}
           onClick={() => onClickCategory(idx)}
         >
           {el}

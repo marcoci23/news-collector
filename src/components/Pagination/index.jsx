@@ -1,16 +1,18 @@
 import React from "react";
 import s from "./Pagination.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { setCurrentPage } from "../../redux/slices/newsSlice";
 
-const Pagination = ({ currentPage, setCurrentPage, setFetching }) => {
+const Pagination = () => {
+  const dispatch = useDispatch();
+  const currentPage = useSelector((state) => state.newsReducer.currentPage);
   const onClickNext = () => {
-    setFetching(true);
-    setCurrentPage(currentPage + 1);
+    dispatch(setCurrentPage(currentPage + 1));
     window.scrollTo(0, 0);
   };
   const onClickPrevious = () => {
-    setFetching(true);
     if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
+      dispatch(setCurrentPage(currentPage - 1));
     }
     window.scrollTo(0, 0);
   };

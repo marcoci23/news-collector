@@ -1,15 +1,24 @@
 .newsItem {
   display: flex;
-  background-color: #9a98985c;
+  background: linear-gradient(
+    130.88deg,
+    #080a0e 0%,
+    rgba(55, 59, 150, 0.2) 71.39%
+  );
   margin-bottom: 30px;
   border-radius: 10px;
-  /* justify-content: center; */
+  justify-content: center;
   cursor: pointer;
+}
+.root {
+  display: flex;
+  width: 1200px;
+  max-height: 250px;
 }
 
 .newsItem:hover {
   transition: 1s;
-  background-color: #cccbcb78;
+  background-color: #79797978;
 }
 .content {
   display: flex;
@@ -18,11 +27,12 @@
   margin: 20px 20px;
   font-weight: 300;
   color: rgb(223, 223, 223);
+  overflow: scroll;
 }
 
 .title {
-  font-weight: 500;
-  color: #0a0a0a;
+  font-weight: 400;
+  color: #ffffff;
 }
 
 .img {
@@ -48,12 +58,12 @@
   position: fixed;
   top: 50px;
   height: 80vh;
-  opacity: 0;
   animation: ani 0.5s forwards;
-  max-width: 1200px;
+  width: 1200px;
   padding: 20px;
   color: white;
   font-weight: 200;
+  box-shadow: 0px 0px 100px 90px rgba(0, 0, 0, 0.588);
 }
 
 .expandTitle {
@@ -85,6 +95,7 @@
 .expandContent {
   font-weight: 100;
   padding: 0 50px 0 50px;
+  line-height: 30px;
 }
 .expandBar {
   height: 5px;

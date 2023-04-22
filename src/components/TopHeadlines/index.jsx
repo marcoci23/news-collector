@@ -1,30 +1,25 @@
 import React from "react";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import NewsIntem from "../NewsItem";
 import CategoryMenu from "../CategoryMenu";
 import Pagination from "../Pagination";
-import axios from "axios";
 import ContentLoader from "react-content-loader";
 import style from "./Loader.module.css";
 import s from "./TopHeadlines.module.css";
-import { FetchingContext } from "../../pages/NewsPage";
+import { fetchNews } from "../../redux/slices/newsSlice";
 
-const TopHeadlines = ({ lang, currentPage, setCurrentPage }) => {
-  const [news, setNews] = React.useState([]);
-  const { fetching, setFetching } = React.useContext(FetchingContext);
+const TopHeadlines = () => {
+  const dispatch = useDispatch();
 
-  const category = useSelector((state) => state.categoryReducer.category);
+  const { news, status, currentPage } = useSelector(
+    (state) => state.newsReducer
+  );
+  const lang = useSelector((state) => state.languageReducer.lang);
+  const category = useSelector((state) => state.categoryReducer.activeCategory);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://gnews.io/api/v4/top-headlines?category=${category}&lang=${lang}&max=5&page=${currentPage}&expand=content&apikey=87cf4570610511f989f344bbabc8cc1f`
-      )
-      .then((response) => {
-        setNews(response.data.articles);
-        setFetching(false);
-      });
+    dispatch(fetchNews({ currentPage, category, lang }));
   }, [currentPage, category, lang]);
 
   // useEffect(() => {
@@ -44,17 +39,15 @@ const TopHeadlines = ({ lang, currentPage, setCurrentPage }) => {
   //     setFetching(true);
   //   }
   // };
-
   return (
-    <div>
-      <CategoryMenu setFetching={setFetching} setCurrentPage={setCurrentPage} />
+    <div className={s.root}>
+      <CategoryMenu />
       <div className={s.title}>
         Top headlines articles based on the Google News ranking
       </div>
+
       {news.map((item, idx) =>
-        fetching == false ? (
-          <NewsIntem idx={idx} key={idx} news={item} />
-        ) : (
+        status == "loading" ? (
           <ContentLoader
             key={idx}
             className={style.loader}
@@ -63,18 +56,19 @@ const TopHeadlines = ({ lang, currentPage, setCurrentPage }) => {
             width={1200}
             height={250}
             viewBox="0 0 1200 250"
-            backgroundColor="#333333"
+            backgroundColor="#6363635c"
             foregroundColor="#494955"
+            // marginBottom={30}
           >
             <rect x="0" y="0" rx="10" ry="10" width="1200" height="250" />
           </ContentLoader>
+        ) : status == "success" ? (
+          <NewsIntem idx={idx} key={idx} news={item} />
+        ) : (
+          <h1>Error</h1>
         )
       )}
-      <Pagination
-        setFetching={setFetching}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
+      <Pagination />
     </div>
   );
 };

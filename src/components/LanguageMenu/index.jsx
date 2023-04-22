@@ -1,34 +1,39 @@
 import React from "react";
 import s from "./LanguageMenu.module.css";
-import { FetchingContext, LanguageContext } from "../../pages/NewsPage";
+import { useDispatch, useSelector } from "react-redux";
+import { setLang } from "../../redux/slices/languageSlice";
+import { setCurrentPage } from "../../redux/slices/newsSlice";
 
 export const LanguageMenu = () => {
-  const { lang, setLang, setCurrentPage } = React.useContext(LanguageContext);
-  const { setFetching } = React.useContext(FetchingContext);
+  const dispatch = useDispatch();
+  const lang = useSelector((state) => state.languageReducer.lang);
   const [open, setOpen] = React.useState(false);
   const langList = [
     { name: "en", label: "English" },
     { name: "ro", label: "Romanian" },
     { name: "ru", label: "Russian" },
+    { name: "de", label: "German" },
+    { name: "fr", label: "French" },
+    { name: "es", label: "Spanish" },
   ];
   const onClickLang = (idx) => {
-    setFetching(true);
-    setLang(langList[idx].name);
+    dispatch(setLang(langList[idx].name));
+    dispatch(setCurrentPage(1));
     setOpen(false);
-    setCurrentPage(1);
   };
-
   return (
     <div className={s.languageMenu}>
       <div onClick={() => setOpen(!open)}>Language: {lang}</div>
-      <div className={s.languages}>
-        {open &&
-          langList.map((el, idx) => (
-            <div onClick={() => onClickLang(idx)} key={idx}>
+
+      {open && (
+        <div className={s.languages}>
+          {langList.map((el, idx) => (
+            <div className={s.item} onClick={() => onClickLang(idx)} key={idx}>
               {el.label}
             </div>
           ))}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -12,13 +12,13 @@
   letter-spacing: 0.1em;
 }
 .newsPage {
-  background: rgb(0, 0, 0);
+  /* background: rgb(0, 0, 0); */
   /* background: radial-gradient(
     circle,
     rgb(40, 48, 90) 10%,
     rgba(0, 0, 0, 1) 86%
   ); */
-  /* background-color: #000000; */
+  background-color: #000000;
   /* background-image: url(../img/fon.png);
   background-repeat: no-repeat;
   background-size: cover; */
