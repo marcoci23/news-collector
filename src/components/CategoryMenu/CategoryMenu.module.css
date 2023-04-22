@@ -24,6 +24,7 @@
   transition: box-shadow 0.2s;
   font-weight: 300;
   transition: 1s;
+  margin-bottom: 5px;
 }
 /* .btn:focus-visible {
   border: 1px solid #000000;
