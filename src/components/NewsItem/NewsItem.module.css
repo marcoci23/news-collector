@@ -1,10 +1,6 @@
 .newsItem {
   display: flex;
-  background: linear-gradient(
-    130.88deg,
-    #080a0e 0%,
-    rgba(55, 59, 150, 0.2) 71.39%
-  );
+  background: #d5d5d522;
   margin-bottom: 30px;
   border-radius: 10px;
   justify-content: center;
