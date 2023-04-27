@@ -52,3 +52,11 @@
     padding: 30px;
   }
 }
+@media (max-width: 770px) {
+  .logo span {
+    font-size: 15px;
+  }
+  .siteMap {
+    align-items: flex-start;
+  }
+}

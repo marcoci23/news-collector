@@ -145,10 +145,10 @@
   .newsItem {
     flex-direction: column;
     height: auto;
-    max-width: 400px;
+    max-width: 350px;
   }
   .img {
-    width: 400px;
+    width: 350px;
   }
   .expand {
     max-width: 330px;
