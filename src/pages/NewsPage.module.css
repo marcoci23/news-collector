@@ -53,8 +53,8 @@
   line-height: 30px;
   color: #b8b8b8;
 }
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   .newsPage {
     background-color: #ffffff;
   }
-}
+} */
