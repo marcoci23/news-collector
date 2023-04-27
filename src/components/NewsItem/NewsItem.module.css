@@ -147,16 +147,22 @@
     height: auto;
     max-width: 400px;
   }
+  .img {
+    width: 400px;
+  }
   .expand {
     max-width: 330px;
   }
   .imgExp {
-    width: 300px;
+    width: 330px;
     height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+    border-radius: 0;
   }
   .expandTitle {
-    max-width: 500px;
+    max-width: 300px;
+  }
+  .expandContent {
+    max-width: 330px;
+    padding: 5px;
   }
 }
