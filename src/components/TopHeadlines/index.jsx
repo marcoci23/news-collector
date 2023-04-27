@@ -48,20 +48,19 @@ const TopHeadlines = () => {
 
       {news.map((item, idx) =>
         status == "loading" ? (
-          <ContentLoader
-            key={idx}
-            className={style.loader}
-            rtl
-            speed={2}
-            width={1200}
-            height={250}
-            viewBox="0 0 1200 250"
-            backgroundColor="#6363635c"
-            foregroundColor="#494955"
-            // marginBottom={30}
-          >
-            <rect x="0" y="0" rx="10" ry="10" width="1200" height="250" />
-          </ContentLoader>
+          // <ContentLoader
+          //   key={idx}
+          //   className={style.loader}
+          //   rtl
+          //   speed={2}
+          //   viewBox="0 0 1200 250"
+          //   backgroundColor="#6363635c"
+          //   foregroundColor="#494955"
+          //   // marginBottom={30}
+          // >
+          //   <rect x="0" y="0" rx="10" ry="10" width="1200" height="250" />
+          // </ContentLoader>
+          <div className={style.loader}></div>
         ) : status == "success" ? (
           <NewsIntem idx={idx} key={idx} news={item} />
         ) : (

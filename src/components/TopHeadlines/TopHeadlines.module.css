@@ -9,4 +9,6 @@
   font-size: 15px;
   line-height: 30px;
   color: #b8b8b8;
+  max-width: 1200px;
+  margin: 0 auto;
 }

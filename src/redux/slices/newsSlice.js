@@ -4,10 +4,10 @@ import axios from "axios";
 export const fetchNews = createAsyncThunk("news/fetchNews", async (params) => {
   const { currentPage, category, lang } = params;
 
-  const res = await axios.get(
+  const { data } = await axios.get(
     `https://gnews.io/api/v4/top-headlines?category=${category}&lang=${lang}&max=5&page=${currentPage}&expand=content&apikey=87cf4570610511f989f344bbabc8cc1f`
   );
-  return res.data;
+  return data;
 });
 
 const initialState = {

@@ -1,9 +1,9 @@
 .root {
   background: #131313;
+  max-width: 1200;
 }
 .content {
   padding-top: 30px;
-  width: 1200px;
   margin: 0 auto;
   display: flex;
   height: 200px;
