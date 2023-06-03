@@ -1,6 +1,5 @@
 .languageMenu {
   cursor: pointer;
-  padding: 30px;
   user-select: none;
 }
 
@@ -8,7 +7,7 @@
   position: absolute;
   background-color: #181818;
   border-radius: 5px;
-  padding: 5px 30px;
+  padding: 5px 12px;
   color: white;
   text-align: center;
   font-weight: 200;

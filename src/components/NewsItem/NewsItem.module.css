@@ -40,6 +40,7 @@
 .source {
   color: rgba(255, 255, 255, 0.633);
   font-weight: 100;
+  text-align: end;
 }
 
 .expand::-webkit-scrollbar {
@@ -106,7 +107,7 @@
   margin: 20px auto;
 }
 .expandTime {
-  font-size: 10px;
+  font-size: 15px;
   color: #828282;
   font-weight: 400;
   text-align: center;

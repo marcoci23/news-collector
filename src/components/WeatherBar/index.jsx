@@ -7,7 +7,9 @@ const WeatherBar = () => {
   return (
     <div className={s.bar}>
       <div className={s.weather}>
-        <Link to={"/weather"}>Chisinau +15</Link>
+        <Link to={"/weather"} className={s.weather}>
+          Weather
+        </Link>
       </div>
       <div className={s.language}>
         <LanguageMenu />

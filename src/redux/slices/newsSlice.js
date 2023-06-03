@@ -1,13 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const API_KEY = "87cf4570610511f989f344bbabc8cc1f";
+
 export const fetchNews = createAsyncThunk("news/fetchNews", async (params) => {
   const { currentPage, category, lang } = params;
 
-  const { data } = await axios.get(
-    `https://gnews.io/api/v4/top-headlines?category=${category}&lang=${lang}&max=5&page=${currentPage}&expand=content&apikey=87cf4570610511f989f344bbabc8cc1f`
+  const res = await axios.get(
+    `https://gnews.io/api/v4/top-headlines?category=${category}&lang=${lang}&max=5&page=${currentPage}&expand=content&apikey=${API_KEY}`
   );
-  return data;
+  return res.data;
 });
 
 const initialState = {

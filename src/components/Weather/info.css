@@ -1,0 +1,59 @@
+.info {
+  /* background-color: rgba(0, 0, 0, 0.418); */
+  background-image: url(../../img/giphy.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  color: white;
+  max-width: 1100px;
+  height: 212px;
+  border-radius: 10px;
+  padding: 20px 34px;
+}
+
+.info-general {
+  display: flex;
+  flex-direction: column;
+  animation: ani 0.5s forwards;
+}
+.info_city {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 275;
+  font-size: 25px;
+  line-height: 38px;
+  display: flex;
+  margin-bottom: 20px;
+}
+.info_city p {
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 10px;
+}
+.info_item {
+  display: flex;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 275;
+  font-size: 18px;
+  line-height: 27px;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+.info_item p {
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+@keyframes ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 1100px) {
+  .info {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}

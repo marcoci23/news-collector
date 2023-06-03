@@ -1,0 +1,108 @@
+.item {
+  /* background-color: rgba(0, 0, 0, 0.566); */
+  width: 213px;
+  height: 141px;
+  left: 170px;
+  top: 480px;
+  background: #000000;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: white;
+  text-align: center;
+  padding: 7px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  -webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.item_date {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.item_temp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item_temp_info {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+}
+.item_description {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  color: #0d80d2;
+  margin-top: -20px;
+}
+.item_temp-min-max {
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.item_min {
+  margin-right: 10px;
+}
+@keyframes ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes scale-up-ver-top {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+}
+@keyframes scale-up-ver-top {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+}
+@media (max-width: 447px) {
+  .item {
+    width: 436px;
+  }
+}
+@media (max-width: 1100px) {
+  .item {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
