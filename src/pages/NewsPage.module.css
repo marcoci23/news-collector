@@ -10,9 +10,9 @@
   color: white;
   margin-top: 50px;
   letter-spacing: 0.1em;
-  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
+  /* -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
     both;
-  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both; */
 }
 .newsPage {
   /* background: rgb(0, 0, 0); */
@@ -82,5 +82,11 @@
   }
   100% {
     opacity: 1;
+  }
+}
+@media (max-width: 1200px) {
+  .subtitle {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
