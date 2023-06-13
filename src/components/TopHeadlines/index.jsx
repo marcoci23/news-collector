@@ -60,7 +60,7 @@ const TopHeadlines = () => {
           // >
           //   <rect x="0" y="0" rx="10" ry="10" width="1200" height="250" />
           // </ContentLoader>
-          <div className={style.loader}></div>
+          <div className={style.loader} key={idx}></div>
         ) : status == "success" ? (
           <NewsIntem idx={idx} key={idx} news={item} />
         ) : (
