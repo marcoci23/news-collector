@@ -18,7 +18,7 @@
 
 @media (max-width: 770px) {
   .loader {
-    max-width: 400px;
+    max-width: 350px;
     height: 500px;
   }
 }
