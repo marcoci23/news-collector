@@ -33,7 +33,7 @@ export const NewsIntem = ({ news }) => {
               <div className={s.expandTime}>{date}</div>
               <div className={s.expandTitle}>{news.title}</div>
               <div className={s.expandImg}>
-                <img className={s.imgExp} src={news.image} alt="asdas" />
+                <img className={s.imgExp} src={news.image} alt="image" />
               </div>
               <div className={s.expandSource}>{news.source.name}</div>
             </div>
